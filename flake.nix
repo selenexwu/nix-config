@@ -95,7 +95,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users."seb" = import ./home.nix; 
+              users."seb" = import ./home; 
             };
           }
         ];
@@ -109,7 +109,7 @@
       "seb@SebLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home.nix ];
+        modules = [ ./home ];
       };
     };
     */

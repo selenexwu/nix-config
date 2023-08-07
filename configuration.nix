@@ -68,8 +68,12 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  environment.pathsToLink = [ "/libexec" ]; # necessary for i3
+  environment.pathsToLink = [ 
+    "/libexec" # necessary for i3 
+    "/share/zsh" # for zsh completion
+  ]; 
 
+  
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
@@ -91,7 +95,6 @@
       enable = true;
       extraPackages = with pkgs; [
         dmenu
-        i3status
         i3lock
       ];
     };
@@ -99,12 +102,14 @@
     layout = "us";
     xkbVariant = "";
   };
+  
+  
   /*
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
 
-    # Enable the XFCE Desktop Environment with i3.
+    # Enable the GNOME Flashback Desktop Environment with i3.
     displayManager = {
       gdm.enable = true;
       defaultSession = "gnome-flashback-i3";
@@ -182,7 +187,13 @@
     xorg.xev
     pavucontrol
     xfce.xfce4-volumed-pulse
+    zathura
+    qpdf
   ];
+
+  # ZSH
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
