@@ -11,12 +11,14 @@
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
     enableCompletion = true;
+    syntaxHighlighting.enable = true;
     prezto = {
       enable = true;
       caseSensitive = false;
       editor.keymap = null;
       prompt.theme = "powerlevel10k";
     };
+    initExtra = "source ${./p10k.zsh}";
   };
 
   programs.kitty.font = {

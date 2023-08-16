@@ -10,6 +10,8 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./polybar
+    ./zsh
+    ./nvim
   ];
 
   /*
@@ -51,7 +53,7 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-    trashy
+
   ];
 
   # basic configuration of git
@@ -59,20 +61,6 @@
     enable = true;
     userName = "Seb";
     userEmail = "sebastianxwu@gmail.com";
-  };
-
-  # ZSH
-  programs.zsh = {
-    enable = true;
-    autocd = true;
-    dotDir = ".config/zsh";
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    prezto = {
-      enable = true;
-      caseSensitive = false;
-      editor.keymap = "vi";
-    };
   };
 
   # Nicely reload system units when changing configs
