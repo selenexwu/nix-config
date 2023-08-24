@@ -95,6 +95,8 @@
     xfce.xfce4-volumed-pulse
     zathura
     qpdf
+    zip
+    unzip
   ];
 
   # ZSH
@@ -110,7 +112,7 @@
   # };
 
   # List services that you want to enable:
-  services.picom.enable = true;
+  #services.picom.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

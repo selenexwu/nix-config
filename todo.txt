@@ -2,9 +2,6 @@ polybar
   fix missing characters (volume and brightness)
   fix brightness scrolling
   convert to nix syntax
-kitty
-  move to own file
-flameshot
 wallpaper
 rofi/ilia
 astronvim

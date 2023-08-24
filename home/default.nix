@@ -11,6 +11,7 @@
     ./polybar
     ./zsh
     ./nvim
+    ./picom
   ];
 
   /*
@@ -47,12 +48,22 @@
 
   programs.kitty = {
     enable = true;
+    theme = "Dracula";
+  };
+
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General.showHelp = false;
+    };
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     firefox
+    tldr
+    discord
   ];
 
   # basic configuration of git
@@ -60,6 +71,14 @@
     enable = true;
     userName = "Seb";
     userEmail = "sebastianxwu@gmail.com";
+  };
+
+  # Temporary fix for the non-existence of tray.target
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
   };
 
   # Nicely reload system units when changing configs
