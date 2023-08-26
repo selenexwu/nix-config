@@ -15,7 +15,6 @@
     "/share/zsh" # for zsh completion
   ]; 
 
-  
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
@@ -45,7 +44,6 @@
     xkbVariant = "";
   };
   
-  
   /*
   services.xserver = {
     # Enable the X11 windowing system.
@@ -63,7 +61,8 @@
           {
             wmName = "i3";
             wmLabel = "i3";
-            wmCommand = "${pkgs.i3}/bin/i3";
+	    wmCommand = let i3-gnome = import ./i3-gnome.nix { inherit pkgs; }; in "${i3-gnome}";
+            #wmCommand = "${pkgs.i3}/bin/i3";
             enableGnomePanel = false;
           }
         ];
@@ -73,7 +72,6 @@
       enable = true;
       extraPackages = with pkgs; [
         dmenu
-        i3status
         i3lock
       ];
     };
@@ -81,7 +79,12 @@
     layout = "us";
     xkbVariant = "";
   };
-  #services.gnome.core-utilities.enable = false;
+  services.gnome.core-utilities.enable = false;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = lib.mkForce [ pkgs.xdg-desktop-portal-gtk ];
+  };
   */
 
   # List packages installed in system profile. To search, run:
@@ -116,6 +119,10 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/intel_backlight/brightness", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
+  '';
 
   hardware.bluetooth.enable = true;
 
@@ -206,7 +213,7 @@
   users.users.seb = {
     isNormalUser = true;
     description = "Sebastian";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
   };
 
   # Allow unfree packages

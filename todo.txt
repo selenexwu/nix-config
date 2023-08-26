@@ -1,11 +1,9 @@
 polybar
-  fix missing characters (volume and brightness)
-  fix brightness scrolling
+  fix character spacing
   convert to nix syntax
-wallpaper
 rofi/ilia
 astronvim
-try gnome again and see why it crashes
+nix-colors
 i3
   convert config to nix syntax
   move to home-manager

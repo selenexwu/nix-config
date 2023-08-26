@@ -4,7 +4,7 @@
   services.polybar = {
     enable = true;
     package = pkgs.polybarFull;
-    extraConfig = builtins.readFile ./config;
+    extraConfig = builtins.readFile ./config.ini;
     script = builtins.readFile ./launch.sh;
   };
   
@@ -12,6 +12,7 @@
     fantasque-sans-mono
     (nerdfonts.override { fonts = [ "Iosevka" ]; })
     noto-fonts-cjk-sans
+    playerctl
   ];
 
   systemd.user.services.polybar = {

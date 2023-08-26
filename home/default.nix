@@ -64,6 +64,7 @@
     firefox
     tldr
     discord
+    spotify
   ];
 
   # basic configuration of git
