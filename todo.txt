@@ -1,9 +1,6 @@
-polybar
-  fix character spacing
-  convert to nix syntax
 rofi/ilia
 astronvim
 nix-colors
 i3
-  convert config to nix syntax
   move to home-manager
+  convert config to nix syntax
