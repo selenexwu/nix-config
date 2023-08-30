@@ -47,6 +47,15 @@
     };
   };
 
+  # Add stuff for your user as you see fit:
+  # programs.neovim.enable = true;
+  home.packages = with pkgs; [
+    firefox
+    tldr
+    discord
+    spotify
+  ];
+
   programs.kitty = {
     enable = true;
     theme = "Dracula";
@@ -59,14 +68,17 @@
     };
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  home.packages = with pkgs; [
-    firefox
-    tldr
-    discord
-    spotify
-  ];
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.dracula-theme;
+      name = "Dracula";
+    };
+    iconTheme = {
+      package = pkgs.dracula-icon-theme;
+      name = "Dracula";
+    };
+  };
 
   # basic configuration of git
   programs.git = {
