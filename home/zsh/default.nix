@@ -25,6 +25,9 @@
       # powerlevel10k configs from wizard
       source ${./p10k.zsh}
 
+      # custom shell functions
+      source ${./functions.zsh}
+
       # up and down arrows use history
       autoload -U up-line-or-beginning-search
       autoload -U down-line-or-beginning-search
