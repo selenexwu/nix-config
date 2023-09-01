@@ -1,12 +1,12 @@
 { lib, config, pkgs, inputs, ... }: {
   imports = [];
 
-  home.packages = with pkgs; [
-    neovim
-    xclip
-  ];
-
-  home.shellAliases = {
-    vim = "nvim";
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    extraPackages = [ pkgs.xclip ];
   };
+
 }
