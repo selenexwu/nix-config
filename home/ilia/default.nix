@@ -2,6 +2,6 @@
   imports = [];
 
   home.packages = with pkgs; [
-    (import ./ilia.nix { inherit pkgs; } )
+    (callPackage ./ilia.nix { } )
   ];
 }

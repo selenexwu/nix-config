@@ -1,6 +1,6 @@
-rofi/ilia
 astronvim
 nix-colors
 i3
   move to home-manager
   convert config to nix syntax
+  duplicate some of regolith's shortcuts?

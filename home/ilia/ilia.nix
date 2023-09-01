@@ -1,6 +1,22 @@
-{ pkgs ? import <nixpkgs> {}, ... }: 
+{ stdenv
+, fetchFromGitHub
+, meson
+, ninja
+, vala
+, pkg-config
+, wrapGAppsHook
+, gobject-introspection
+, glib
+, json-glib
+, tracker
+, atk
+, cairo
+, gtk3
+, libgee
+, gtk-layer-shell
+}:
 
-with pkgs; stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "ilia";
   version = "r3_0-ubuntu-jammy";
 
