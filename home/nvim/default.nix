@@ -19,9 +19,9 @@
     in astronvim;
     # recursive = true;
   };
-  # xdg.configFile."nvim/lua/user" = {
-  #   source = ./user;
-  #   # recursive = true;
-  # };
+  xdg.configFile."astronvim/lua/user" = {
+    source = ./user;
+    # recursive = true;
+  };
 
 }
