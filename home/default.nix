@@ -87,6 +87,8 @@
     userEmail = "sebastianxwu@gmail.com";
   };
 
+  services.blueman-applet.enable = true;
+
   # Temporary fix for the non-existence of tray.target
   systemd.user.targets.tray = {
     Unit = {
