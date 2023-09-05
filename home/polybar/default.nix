@@ -235,8 +235,10 @@
     noto-fonts-cjk-sans
     playerctl
   ];
-
+  
+  /*
   systemd.user.services.polybar = {
     Install.WantedBy = [ "graphical-session.target" ];
   };
+  */
 }
