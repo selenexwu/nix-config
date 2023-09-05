@@ -56,6 +56,7 @@
     spotify
     baobab
     ocaml
+    opam
   ];
 
   programs.kitty = {

@@ -22,11 +22,11 @@
       rm = "echo 'This is not the command you are looking for.'; false";
     };
     initExtra = ''
-      # powerlevel10k configs from wizard
-      source ${./p10k.zsh}
+      source ${./p10k.zsh} # powerlevel10k configs from wizard
 
-      # custom shell functions
-      source ${./functions.zsh}
+      source ${./functions.zsh} # custom shell functions
+
+      source ${./opam.zsh} # opam (Ocaml package manager) setup
 
       # up and down arrows use history
       autoload -U up-line-or-beginning-search
