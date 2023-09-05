@@ -54,6 +54,7 @@
     tldr
     discord
     spotify
+    baobab
   ];
 
   programs.kitty = {
