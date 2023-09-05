@@ -55,6 +55,7 @@
     discord
     spotify
     baobab
+    ocaml
   ];
 
   programs.kitty = {
