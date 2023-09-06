@@ -92,11 +92,26 @@
 
   services.blueman-applet.enable = true;
 
+  xdg.desktopEntries = {
+    firefox-school = {
+      name = "Firefox (School)";
+      exec = "${pkgs.firefox}/bin/firefox -P school --name firefox %U";
+      icon = "firefox";
+      startupNotify = true;
+      terminal = false;
+      genericName = "Web Browser";
+      categories = [ "Network" "WebBrowser" ];
+    };
+  };
+
   # Temporary fix for the non-existence of tray.target
   systemd.user.targets.tray = {
     Unit = {
       Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
+      # Requires = [ "graphical-session-pre.target" ];
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
     };
   };
 
