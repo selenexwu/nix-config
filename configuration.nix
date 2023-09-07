@@ -102,6 +102,8 @@
     qpdf
     zip
     unzip
+    gcc
+    gnumake
   ];
 
   # ZSH
@@ -116,7 +118,7 @@
 
   i18n.inputMethod = {
     enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [ rime ];
+    ibus.engines = with pkgs.ibus-engines; [ rime m17n ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
