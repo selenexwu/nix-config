@@ -104,6 +104,13 @@
     };
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = ["firefox.desktop"];
+    };
+  };
+
   # Temporary fix for the non-existence of tray.target
   systemd.user.targets.tray = {
     Unit = {
