@@ -48,8 +48,19 @@
   };
 
   # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  home.packages = with pkgs; [
+  home.packages = let
+    tex = (pkgs.texlive.combine {
+      inherit (pkgs.texlive) 
+      scheme-medium
+      algorithm2e
+      exam
+      preprint
+      xcolor
+      ifoddpage
+      relsize;
+    });
+  in
+  with pkgs; [
     firefox
     tldr
     discord
@@ -57,6 +68,8 @@
     baobab
     ocaml
     opam
+    texmaker
+    tex
   ];
 
   programs.kitty = {
