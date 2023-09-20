@@ -70,6 +70,8 @@
     opam
     texmaker
     tex
+    slack
+    godot_4
   ];
 
   programs.kitty = {
