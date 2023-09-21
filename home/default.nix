@@ -72,6 +72,7 @@
     tex
     slack
     godot_4
+    elan
   ];
 
   programs.kitty = {
