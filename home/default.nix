@@ -73,6 +73,7 @@
     slack
     godot_4
     elan
+    audacity
   ];
 
   programs.kitty = {
