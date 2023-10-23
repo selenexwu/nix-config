@@ -74,6 +74,7 @@
     godot_4
     elan
     audacity
+    python3
   ];
 
   programs.kitty = {
