@@ -122,6 +122,10 @@
     };
   };
 
+  home.file.".gdbinit".text = ''
+    set disassembly-flavor intel
+  '';
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
