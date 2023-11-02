@@ -75,6 +75,7 @@
     elan
     audacity
     python3
+    flameshot
   ];
 
   programs.kitty = {
@@ -82,12 +83,12 @@
     theme = "Dracula";
   };
 
-  services.flameshot = {
-    enable = true;
-    settings = {
-      General.showHelp = false;
-    };
-  };
+  # services.flameshot = {
+  #   enable = true;
+  #   settings = {
+  #     General.showHelp = false;
+  #   };
+  # };
 
   gtk = {
     enable = true;
