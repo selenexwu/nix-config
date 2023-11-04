@@ -76,6 +76,7 @@
     audacity
     python3
     flameshot
+    aseprite-unfree
   ];
 
   programs.kitty = {
