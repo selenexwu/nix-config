@@ -46,7 +46,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "hls"
     },
     config = {
       rust_analyzer = {
