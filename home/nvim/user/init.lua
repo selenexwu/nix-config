@@ -59,6 +59,13 @@ return {
           },
         },
       },
+      hls = {
+        settings = {
+          haskell = {
+            formattingProvider = "fourmolu",
+          },
+        },
+      },
     },
   },
   -- Configure require("lazy").setup() options
