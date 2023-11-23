@@ -20,6 +20,10 @@ return {
       return opts
     end,
   },
+  {
+    "kevinhwang91/nvim-ufo",
+    version = false,
+  },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --
