@@ -181,6 +181,7 @@
 
   networking.hostName = "SebLaptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.nameservers = [ "9.9.9.9" "8.8.8.8" "1.1.1.1" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
