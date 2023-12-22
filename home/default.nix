@@ -57,7 +57,8 @@
       preprint
       xcolor
       ifoddpage
-      relsize;
+      relsize
+      enumitem;
     });
   in
   with pkgs; [
