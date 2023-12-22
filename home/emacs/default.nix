@@ -6,12 +6,23 @@
     package = pkgs.emacs;
   };
 
+  services.emacs = {
+    enable = true;
+    client = {
+      enable = true;
+      arguments = [ "-c" "-a emacs" ];
+    };
+  };
+
   home = {
     sessionPath = [ "${config.xdg.configHome}/emacs/bin" ];
     sessionVariables = {
       DOOMDIR = "${config.xdg.configHome}/doom-config";
       DOOMLOCALDIR = "${config.xdg.configHome}/doom-local";
       DOOMPROFILELOADFILE = "${config.xdg.cacheHome}/profile-load.el";
+    };
+    shellAliases = {
+      "emacs" = "emacsclient -t";
     };
   };
 
