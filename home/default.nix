@@ -130,6 +130,10 @@
     set disassembly-flavor intel
   '';
 
+  home.file.".xprofile".text = ''
+    . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
+  '';
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
