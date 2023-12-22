@@ -22,6 +22,10 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    doomemacs = {
+      url = "github:doomemacs/doomemacs/master";
+      flake = false;
+    };
   };
 
   # `outputs` are all the build result of the flake.
@@ -96,6 +100,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users."seb" = import ./home; 
+              extraSpecialArgs = { inherit inputs; };
             };
           }
         ];

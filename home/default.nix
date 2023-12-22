@@ -13,6 +13,7 @@
     ./nvim
     ./picom
     ./ilia
+    ./emacs
   ];
 
   /*

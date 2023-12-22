@@ -1,13 +1,9 @@
 { lib, config, pkgs, inputs, ... }: {
   imports = []; 
   
-  services.emacs = {
+  programs.emacs = {
     enable = true;
     package = pkgs.emacs;
-    client = {
-      enable = true;
-      arguments = [ "-c" "-a emacs" ];
-    };
   };
 
   home = {
@@ -15,6 +11,7 @@
     sessionVariables = {
       DOOMDIR = "${config.xdg.configHome}/doom-config";
       DOOMLOCALDIR = "${config.xdg.configHome}/doom-local";
+      DOOMPROFILELOADFILE = "${config.xdg.cacheHome}/profile-load.el";
     };
   };
 
@@ -23,12 +20,14 @@
     configFile = {
       "doom-config/config.el".source = ./doom.d/config.el;
       "doom-config/init.el".source = ./doom.d/init.el;
-      "doom-config/packages.el".text = ./doom.d/packages.el;
+      "doom-config/packages.el".source = ./doom.d/packages.el;
       "emacs" = {
-        source = builtins.fetchGit "https://github.com/hlissner/doom-emacs";
+        source = inputs.doomemacs;
         onChange = "${pkgs.writeShellScript "doom-change" ''
+          export PATH="${config.services.emacs.package}/bin:$PATH"
           export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
+          export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
           if [ ! -d "$DOOMLOCALDIR" ]; then
             ${config.xdg.configHome}/emacs/bin/doom -y install
           else
@@ -50,6 +49,6 @@
     # nodePackages.javascript-typescript-langserver
     # sqlite
     # editorconfig-core-c
-    emacs-all-the-icons-fonts
+    # emacs-all-the-icons-fonts
   ];
 }
