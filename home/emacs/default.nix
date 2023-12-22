@@ -30,8 +30,26 @@
     enable = true;
     configFile = {
       "doom-config/config.el".source = ./doom.d/config.el;
-      "doom-config/init.el".source = ./doom.d/init.el;
-      "doom-config/packages.el".source = ./doom.d/packages.el;
+      "doom-config/init.el" = {
+        source = ./doom.d/init.el;
+        onChange = "${pkgs.writeShellScript "doom-config-init-change" ''
+          export PATH="${config.services.emacs.package}/bin:$PATH"
+          export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
+          export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
+          export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
+          ${config.xdg.configHome}/emacs/bin/doom -y sync
+        ''}";
+      };
+      "doom-config/packages.el" = {
+        source = ./doom.d/packages.el;
+        onChange = "${pkgs.writeShellScript "doom-config-packages-change" ''
+          export PATH="${config.services.emacs.package}/bin:$PATH"
+          export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
+          export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
+          export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
+          ${config.xdg.configHome}/emacs/bin/doom -y sync
+        ''}";
+      };
       "emacs" = {
         source = inputs.doomemacs;
         onChange = "${pkgs.writeShellScript "doom-change" ''
@@ -42,6 +60,7 @@
           if [ ! -d "$DOOMLOCALDIR" ]; then
             ${config.xdg.configHome}/emacs/bin/doom -y install
           else
+            ${config.xdg.configHome}/emacs/bin/doom -y clean
             ${config.xdg.configHome}/emacs/bin/doom -y sync -u
           fi
         ''}";
