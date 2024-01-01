@@ -47,7 +47,7 @@
           export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
-          ${config.xdg.configHome}/emacs/bin/doom -y sync
+          ${config.xdg.configHome}/emacs/bin/doom -y sync -u
         ''}";
       };
       "emacs" = {
