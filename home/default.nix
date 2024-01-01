@@ -79,6 +79,7 @@
     python3
     flameshot
     aseprite-unfree
+    coq
   ];
 
   programs.kitty = {
