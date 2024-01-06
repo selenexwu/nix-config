@@ -6,6 +6,7 @@
     backend = "xrender";
     vSync = true;
     shadow = true;
+    shadowExclude = [ "class_g *= 'QtNeko'" ];
     fade = true;
     inactiveOpacity = 0.95;
     settings = {
