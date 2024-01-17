@@ -37,7 +37,7 @@
           export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
-          ${config.xdg.configHome}/emacs/bin/doom -y sync
+          ${config.xdg.configHome}/emacs/bin/doom --force sync
         ''}";
       };
       "doom-config/packages.el" = {
@@ -47,7 +47,7 @@
           export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
-          ${config.xdg.configHome}/emacs/bin/doom -y sync -u
+          ${config.xdg.configHome}/emacs/bin/doom --force sync -u
         ''}";
       };
       "emacs" = {
@@ -58,10 +58,10 @@
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
           if [ ! -d "$DOOMLOCALDIR" ]; then
-            ${config.xdg.configHome}/emacs/bin/doom -y install
+            ${config.xdg.configHome}/emacs/bin/doom --force install
           else
-            ${config.xdg.configHome}/emacs/bin/doom -y clean
-            ${config.xdg.configHome}/emacs/bin/doom -y sync -u
+            ${config.xdg.configHome}/emacs/bin/doom --force clean
+            ${config.xdg.configHome}/emacs/bin/doom --force sync -u
           fi
         ''}";
       };
