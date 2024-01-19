@@ -80,6 +80,7 @@
     flameshot
     aseprite-unfree
     coq
+    go
   ];
 
   programs.kitty = {
