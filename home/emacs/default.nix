@@ -34,6 +34,7 @@
         source = ./doom.d/init.el;
         onChange = "${pkgs.writeShellScript "doom-config-init-change" ''
           export PATH="${config.services.emacs.package}/bin:$PATH"
+          export PATH="${config.programs.git.package}/bin:$PATH"
           export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
@@ -44,6 +45,7 @@
         source = ./doom.d/packages.el;
         onChange = "${pkgs.writeShellScript "doom-config-packages-change" ''
           export PATH="${config.services.emacs.package}/bin:$PATH"
+          export PATH="${config.programs.git.package}/bin:$PATH"
           export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
@@ -54,6 +56,7 @@
         source = inputs.doomemacs;
         onChange = "${pkgs.writeShellScript "doom-change" ''
           export PATH="${config.services.emacs.package}/bin:$PATH"
+          export PATH="${config.programs.git.package}/bin:$PATH"
           export DOOMDIR="${config.home.sessionVariables.DOOMDIR}"
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
