@@ -74,3 +74,20 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+(add-hook! 'tuareg-mode-hook
+  (setq-local comment-style 'multi-line)
+  (setq-local comment-continue "   "))
+
+(use-package! ocamlformat
+  :when (and (modulep! :lang ocaml) (modulep! :editor format))
+  :commands ocamlformat
+  :hook (tuareg-mode-local-vars . +ocaml-init-ocamlformat-h)
+  :config
+  (defun +ocaml-init-ocamlformat-h ()
+    (when buffer-file-name
+      (let ((ext (file-name-extension buffer-file-name t)))
+        (cond ((equal ext ".eliom")
+               (setq-local ocamlformat-file-kind 'implementation))
+              ((equal ext ".eliomi")
+               (setq-local ocamlformat-file-kind 'interface)))))
+    (setq-local +format-with 'ocamlformat)))
