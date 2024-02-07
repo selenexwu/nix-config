@@ -40,6 +40,7 @@
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
           ${config.xdg.configHome}/emacs/bin/doom --force sync
+          ${config.xdg.configHome}/emacs/bin/doom env
         ''}";
       };
       "doom-config/packages.el" = {
@@ -51,6 +52,7 @@
           export DOOMLOCALDIR="${config.home.sessionVariables.DOOMLOCALDIR}"
           export DOOMPROFILELOADFILE="${config.home.sessionVariables.DOOMPROFILELOADFILE}"
           ${config.xdg.configHome}/emacs/bin/doom --force sync -u
+          ${config.xdg.configHome}/emacs/bin/doom env
         ''}";
       };
       "emacs" = {
@@ -67,6 +69,7 @@
             ${config.xdg.configHome}/emacs/bin/doom --force clean
             ${config.xdg.configHome}/emacs/bin/doom --force sync -u
           fi
+          ${config.xdg.configHome}/emacs/bin/doom env
         ''}";
       };
     };
@@ -80,9 +83,11 @@
     fd
     # imagemagick
     # zstd
-    # nodePackages.javascript-typescript-langserver
     # sqlite
     # editorconfig-core-c
     # emacs-all-the-icons-fonts
+    poppler
+    ghostscript
+    gopls
   ];
 }

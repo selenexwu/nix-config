@@ -72,8 +72,6 @@
     opam
     texmaker
     tex
-    poppler
-    ghostscript
     slack
     godot_4
     elan
