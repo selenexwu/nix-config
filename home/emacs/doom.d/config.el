@@ -91,3 +91,6 @@
               ((equal ext ".eliomi")
                (setq-local ocamlformat-file-kind 'interface)))))
     (setq-local +format-with 'ocamlformat)))
+
+(use-package! rgbds-mode
+  :commands rgbds-mode)
