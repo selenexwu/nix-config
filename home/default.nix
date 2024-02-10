@@ -59,7 +59,10 @@
       xcolor
       ifoddpage
       relsize
-      enumitem;
+      enumitem
+      gb4e
+      tikz-qtree
+      semantic;
     });
   in
   with pkgs; [
