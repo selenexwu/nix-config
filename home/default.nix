@@ -81,7 +81,7 @@
     audacity
     python3
     flameshot
-    aseprite-unfree
+    aseprite
     coq
     go
   ];
