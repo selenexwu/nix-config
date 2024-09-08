@@ -7,13 +7,13 @@
     extraPackages = epkgs: [ epkgs.vterm ];
   };
 
-  services.emacs = {
-    enable = true;
-    client = {
-      enable = true;
-      arguments = [ "-c" "-a emacs" ];
-    };
-  };
+  # services.emacs = {
+  #   enable = true;
+  #   client = {
+  #     enable = true;
+  #     arguments = [ "-c" "-a emacs" ];
+  #   };
+  # };
 
   home = {
     sessionPath = [ "${config.xdg.configHome}/emacs/bin" ];
@@ -22,9 +22,9 @@
       DOOMLOCALDIR = "${config.xdg.configHome}/doom-local";
       DOOMPROFILELOADFILE = "${config.xdg.cacheHome}/profile-load.el";
     };
-    shellAliases = {
-      "emacs" = "emacsclient -t";
-    };
+    # shellAliases = {
+    #   "emacs" = "emacsclient -t";
+    # };
   };
 
   xdg = {
