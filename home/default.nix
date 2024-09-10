@@ -84,6 +84,7 @@
     aseprite
     coq
     go
+    virtualbox
   ];
 
   programs.kitty = {
