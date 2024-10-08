@@ -251,6 +251,9 @@
     magicOrExtension = ''\x7fELF....AI\x02'';
   };
 
+   virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ "seb" ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
