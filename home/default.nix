@@ -84,7 +84,8 @@
     # aseprite
     coq
     go
-    virtualbox
+    ats2
+    praat
   ];
 
   programs.kitty = {
