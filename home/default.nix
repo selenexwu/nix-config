@@ -62,7 +62,8 @@
       enumitem
       gb4e
       tikz-qtree
-      semantic;
+      semantic
+      phonrule;
     });
   in
   with pkgs; [
