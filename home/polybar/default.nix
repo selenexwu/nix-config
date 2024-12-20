@@ -58,7 +58,7 @@
             modules = {
               left = "i3";
               center = "spotify-play-pause spotify-previous spotify-song spotify-next";
-              right = "dunst backlight battery pulseaudio date";
+              right = "xfce-notify backlight battery pulseaudio date";
             };
             enable-ipc = true;
           };
