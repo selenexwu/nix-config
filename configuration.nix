@@ -176,12 +176,9 @@
   };
 
   # Bootloader.
-  boot.loader.grub = {
+  boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 10;
-    device = "nodev";
-    efiSupport = true;
-    useOSProber = true;
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
