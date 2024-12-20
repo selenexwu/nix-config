@@ -87,6 +87,7 @@
     go
     ats2
     praat
+    file
   ];
 
   programs.kitty = {
