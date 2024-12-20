@@ -13,7 +13,9 @@
   environment.pathsToLink = [ 
     "/libexec" # necessary for i3 
     "/share/zsh" # for zsh completion
-  ]; 
+  ];
+
+  services.displayManager.defaultSession = "xfce+i3";
 
   services.xserver = {
     # Enable the X11 windowing system.
@@ -22,7 +24,6 @@
     # Enable the XFCE Desktop Environment with i3.
     displayManager = {
       lightdm.enable = true;
-      defaultSession = "xfce+i3";
     };
     desktopManager = {
       xterm.enable = false;
@@ -40,8 +41,9 @@
       ];
     };
     # Configure keymap in X11
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+    };
   };
   
   /*
@@ -117,7 +119,8 @@
   };
 
   i18n.inputMethod = {
-    enabled = "ibus";
+    enable = true;
+    type = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ rime m17n ];
   };
 
@@ -233,7 +236,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.seb = {

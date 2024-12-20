@@ -1,3 +1,1 @@
 nix-colors
-nvim
-  switch away from Astronvim?
