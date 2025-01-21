@@ -94,3 +94,11 @@
 
 (use-package! rgbds-mode
   :commands rgbds-mode)
+
+(use-package lsp-pyright
+  :custom
+  (lsp-pyright-langserver-command "basedpyright")
+  (lsp-pyright-type-checking-mode "all")
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp))))  ; or lsp-deferred
