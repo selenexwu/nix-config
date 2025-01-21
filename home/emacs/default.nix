@@ -89,5 +89,6 @@
     poppler
     ghostscript
     gopls
+    basedpyright
   ];
 }
