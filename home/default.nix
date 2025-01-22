@@ -88,6 +88,7 @@
     ats2
     praat
     file
+    smlnj
   ];
 
   programs.kitty = {
