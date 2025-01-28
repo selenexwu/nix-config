@@ -17,6 +17,22 @@
         "type": "github"
       }
     },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733328505,
+        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -36,6 +52,27 @@
         "ref": "master",
         "repo": "home-manager",
         "type": "github"
+      }
+    },
+    "nix-xilinx": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737968530,
+        "narHash": "sha256-fGwlIF12ASsaGRFoTZQecOCHXgypjSP48MGFrAbTy9Q=",
+        "owner": "doronbehar",
+        "repo": "nix-xilinx",
+        "rev": "6cf1b0004e0c34a176e8e356f20bee3c261d3390",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "doronbehar",
+        "repo": "nix-xilinx",
+        "type": "gitlab"
       }
     },
     "nixpkgs": {
@@ -58,6 +95,7 @@
       "inputs": {
         "doomemacs": "doomemacs",
         "home-manager": "home-manager",
+        "nix-xilinx": "nix-xilinx",
         "nixpkgs": "nixpkgs"
       }
     }

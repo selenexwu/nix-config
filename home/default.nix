@@ -89,6 +89,7 @@
     praat
     file
     smlnj
+    inputs.nix-xilinx.packages.x86_64-linux.vivado
   ];
 
   programs.kitty = {

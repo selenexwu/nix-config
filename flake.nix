@@ -26,6 +26,10 @@
       url = "github:doomemacs/doomemacs/master";
       flake = false;
     };
+    nix-xilinx = {
+      url = "gitlab:doronbehar/nix-xilinx";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # `outputs` are all the build result of the flake.
