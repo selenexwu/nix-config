@@ -238,7 +238,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.seb = {
     isNormalUser = true;
-    description = "Sebastian";
+    description = "Selene";
     extraGroups = [ "networkmanager" "wheel" "video" ];
   };
 
