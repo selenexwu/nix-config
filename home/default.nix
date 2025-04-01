@@ -63,7 +63,8 @@
       gb4e
       tikz-qtree
       semantic
-      phonrule;
+      phonrule
+      ntheorem;
     });
   in
   with pkgs; [
