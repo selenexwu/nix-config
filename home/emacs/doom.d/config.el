@@ -78,19 +78,19 @@
   (setq-local comment-style 'multi-line)
   (setq-local comment-continue "   "))
 
-(use-package! ocamlformat
-  :when (and (modulep! :lang ocaml) (modulep! :editor format))
-  :commands ocamlformat
-  :hook (tuareg-mode-local-vars . +ocaml-init-ocamlformat-h)
-  :config
-  (defun +ocaml-init-ocamlformat-h ()
-    (when buffer-file-name
-      (let ((ext (file-name-extension buffer-file-name t)))
-        (cond ((equal ext ".eliom")
-               (setq-local ocamlformat-file-kind 'implementation))
-              ((equal ext ".eliomi")
-               (setq-local ocamlformat-file-kind 'interface)))))
-    (setq-local +format-with 'ocamlformat)))
+;; (use-package! ocamlformat
+;;   :when (and (modulep! :lang ocaml) (modulep! :editor format))
+;;   :commands ocamlformat
+;;   :hook (tuareg-mode-local-vars . +ocaml-init-ocamlformat-h)
+;;   :config
+;;   (defun +ocaml-init-ocamlformat-h ()
+;;     (when buffer-file-name
+;;       (let ((ext (file-name-extension buffer-file-name t)))
+;;         (cond ((equal ext ".eliom")
+;;                (setq-local ocamlformat-file-kind 'implementation))
+;;               ((equal ext ".eliomi")
+;;                (setq-local ocamlformat-file-kind 'interface)))))
+;;     (setq-local +format-with 'ocamlformat)))
 
 (use-package! rgbds-mode
   :commands rgbds-mode)
