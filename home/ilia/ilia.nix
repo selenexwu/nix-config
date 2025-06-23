@@ -8,7 +8,7 @@
 , gobject-introspection
 , glib
 , json-glib
-, tracker
+, tinysparql
 , atk
 , cairo
 , gtk3
@@ -33,5 +33,5 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ meson ninja vala pkg-config wrapGAppsHook ];
 
-  buildInputs = [ gobject-introspection glib json-glib tracker atk cairo gtk3 libgee gtk-layer-shell ];
+  buildInputs = [ gobject-introspection glib json-glib tinysparql atk cairo gtk3 libgee gtk-layer-shell ];
 }

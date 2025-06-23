@@ -96,7 +96,7 @@
 
   programs.kitty = {
     enable = true;
-    theme = "Dracula";
+    themeFile = "Dracula";
   };
 
   # services.flameshot = {
@@ -110,19 +110,21 @@
     enable = true;
     package = pkgs.vscodium;
     # will need to become profiles.default.extensions with an update
-    extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
-      vscodevim.vim
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "vscode-cedar";
-        publisher = "cedar-policy";
-        version = "0.9.1";
-        sha256 = "IIk79GGvGVVPtlIpAoROB59u5dJKq3i93yXUUweY3ck=";
-      }
-    ];
-    userSettings = {
-      "workbench.colorTheme" = "Dracula Theme";
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        dracula-theme.theme-dracula
+        vscodevim.vim
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "vscode-cedar";
+          publisher = "cedar-policy";
+          version = "0.9.1";
+          sha256 = "IIk79GGvGVVPtlIpAoROB59u5dJKq3i93yXUUweY3ck=";
+        }
+      ];
+      userSettings = {
+        "workbench.colorTheme" = "Dracula Theme";
+      };
     };
   };
 

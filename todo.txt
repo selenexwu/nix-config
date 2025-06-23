@@ -1,7 +1,1 @@
 nix-colors
-
-evaluation warning: tracker has been renamed to tinysparql
-evaluation warning: seb profile: The option `programs.vscode.extensions' defined in `/nix/store/si3k775n94ax09w3cjgc5hr2vjs84v7m-source/flake.nix' has been renamed to `programs.vscode.profiles.default.extensions'.
-evaluation warning: seb profile: The option `programs.vscode.userSettings' defined in `/nix/store/si3k775n94ax09w3cjgc5hr2vjs84v7m-source/flake.nix' has been renamed to `programs.vscode.profiles.default.userSettings'.
-evaluation warning: seb profile: The option `programs.kitty.theme' defined in `/nix/store/si3k775n94ax09w3cjgc5hr2vjs84v7m-source/flake.nix' has been changed to `programs.kitty.themeFile' that has a different type. Please read `programs.kitty.themeFile' documentation and update your configuration accordingly.
-evaluation warning: The option `hardware.pulseaudio' defined in `/nix/store/9k85bkqjgqfdal0kjfxqijl3gkx0qwpr-source/configuration.nix' has been renamed to `services.pulseaudio'.
