@@ -91,6 +91,7 @@
     file
     smlnj
     inputs.nix-xilinx.packages.x86_64-linux.vivado
+    zoom-us
   ];
 
   programs.kitty = {
