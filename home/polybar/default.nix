@@ -260,7 +260,7 @@
   
   home.packages = with pkgs; [
     fantasque-sans-mono
-    (nerdfonts.override { fonts = [ "Iosevka" ]; })
+    nerd-fonts.iosevka
     noto-fonts-cjk-sans
     playerctl
   ];

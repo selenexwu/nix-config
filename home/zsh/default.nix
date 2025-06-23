@@ -21,7 +21,7 @@
     shellAliases = {
       rm = "echo 'This is not the command you are looking for.'; false";
     };
-    initExtra = ''
+    initContent = lib.mkOrder 1000 ''
       source ${./p10k.zsh} # powerlevel10k configs from wizard
 
       source ${./functions.zsh} # custom shell functions
