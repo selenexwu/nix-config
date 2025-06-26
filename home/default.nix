@@ -84,7 +84,8 @@
     python3
     flameshot
     # aseprite
-    coq
+    rocq-core
+    rocqPackages.stdlib
     go
     ats2
     praat
