@@ -95,6 +95,9 @@
     zoom-us
   ];
 
+  # Rocq path for stdlib
+  home.sessionVariables.ROCQPATH = "/etc/profiles/per-user/seb/lib/coq/9.0/user-contrib/";
+
   programs.kitty = {
     enable = true;
     themeFile = "Dracula";
