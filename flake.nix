@@ -1,5 +1,5 @@
 {
-  description = "Seb's NixOS Flake";
+  description = "Selene's NixOS Flake";
 
   # This is the standard format for flake.nix.
   # `inputs` are the dependencies of the flake,
