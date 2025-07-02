@@ -240,7 +240,7 @@
   users.users.seb = {
     isNormalUser = true;
     description = "Selene";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
 
   # Allow unfree packages
@@ -257,6 +257,11 @@
 
    virtualisation.virtualbox.host.enable = true;
    users.extraGroups.vboxusers.members = [ "seb" ];
+
+   virtualisation.docker = {
+     # Consider disabling the system wide Docker daemon
+     enable = true;
+   };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
