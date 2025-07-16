@@ -194,7 +194,8 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  # time.timeZone = lib.mkDefault "America/New_York";
+  services.automatic-timezoned.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -217,7 +218,7 @@
 
   # Enable sound with pipewire.
   # sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -239,7 +240,7 @@
   users.users.seb = {
     isNormalUser = true;
     description = "Selene";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
 
   # Allow unfree packages
@@ -256,6 +257,11 @@
 
    virtualisation.virtualbox.host.enable = true;
    users.extraGroups.vboxusers.members = [ "seb" ];
+
+   virtualisation.docker = {
+     # Consider disabling the system wide Docker daemon
+     enable = true;
+   };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

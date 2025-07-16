@@ -84,18 +84,23 @@
     python3
     flameshot
     # aseprite
-    coq
+    rocq-core
+    rocqPackages.stdlib
     go
     ats2
     praat
     file
     smlnj
     inputs.nix-xilinx.packages.x86_64-linux.vivado
+    zoom-us
   ];
+
+  # Rocq path for stdlib
+  home.sessionVariables.ROCQPATH = "/etc/profiles/per-user/seb/lib/coq/9.0/user-contrib/";
 
   programs.kitty = {
     enable = true;
-    theme = "Dracula";
+    themeFile = "Dracula";
   };
 
   # services.flameshot = {
