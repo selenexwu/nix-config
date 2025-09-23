@@ -26,8 +26,6 @@
 
       source ${./functions.zsh} # custom shell functions
 
-      source ${./opam.zsh} # opam (Ocaml package manager) setup
-
       # up and down arrows use history
       autoload -U up-line-or-beginning-search
       autoload -U down-line-or-beginning-search
@@ -36,6 +34,13 @@
       bindkey "''${terminfo[kcuu1]}" up-line-or-beginning-search
       bindkey "''${terminfo[kcud1]}" down-line-or-beginning-search
     '';
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 
   programs.kitty.font = {

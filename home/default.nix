@@ -73,8 +73,6 @@
     discord
     spotify
     baobab
-    ocaml
-    opam
     texmaker
     tex
     slack
