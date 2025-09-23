@@ -56,3 +56,5 @@
   :recipe (:host github
            :repo "leanprover-community/lean4-mode"
            :files ("*.el" "data")))
+
+(package! opam-switch-mode :disable t)
