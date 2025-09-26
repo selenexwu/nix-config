@@ -14,6 +14,7 @@
     ./picom
     ./ilia
     ./emacs
+    ./niri
   ];
 
   /*

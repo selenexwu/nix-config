@@ -15,7 +15,7 @@
     "/share/zsh" # for zsh completion
   ];
 
-  services.displayManager.defaultSession = "xfce+i3";
+  services.displayManager.defaultSession = "xfce-wayland";
 
   services.xserver = {
     # Enable the X11 windowing system.
@@ -31,6 +31,8 @@
         enable = true;
         noDesktop = true;
         enableXfwm = false;
+        enableWaylandSession = true;
+        waylandSessionCompositor = "niri";
       };
     };
     windowManager.i3 = {
@@ -45,49 +47,6 @@
       layout = "us";
     };
   };
-  
-  /*
-  services.xserver = {
-    # Enable the X11 windowing system.
-    enable = true;
-
-    # Enable the GNOME Flashback Desktop Environment with i3.
-    displayManager = {
-      gdm.enable = true;
-      defaultSession = "gnome-flashback-i3";
-    };
-    desktopManager = {
-      gnome = {
-        enable = true;
-        flashback.customSessions = [
-          {
-            wmName = "i3";
-            wmLabel = "i3";
-	    wmCommand = let i3-gnome = import ./i3-gnome.nix { inherit pkgs; }; in "${i3-gnome}";
-            #wmCommand = "${pkgs.i3}/bin/i3";
-            enableGnomePanel = false;
-          }
-        ];
-      };
-    };
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu
-        i3lock
-      ];
-    };
-    # Configure keymap in X11
-    layout = "us";
-    xkbVariant = "";
-  };
-  services.gnome.core-utilities.enable = false;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = lib.mkForce [ pkgs.xdg-desktop-portal-gtk ];
-  };
-  */
 
   services.blueman.enable = true;
 
