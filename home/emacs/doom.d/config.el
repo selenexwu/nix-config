@@ -102,3 +102,9 @@
   :hook (python-mode . (lambda ()
                          (require 'lsp-pyright)
                          (lsp))))  ; or lsp-deferred
+
+(setq major-mode-remap-alist major-mode-remap-defaults)
+
+(setq +latex-viewers '(pdf-tools))
+;; (add-hook! 'LaTeX-mode-hook
+;;   (setq TeX-command-default "LaTeXMk"))
