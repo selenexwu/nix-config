@@ -15,6 +15,7 @@
     ./ilia
     ./emacs
     ./niri
+    ./waybar
   ];
 
   /*
