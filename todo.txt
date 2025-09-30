@@ -1,1 +1,10 @@
-nix-colors
+waybar
+layout improvements
+wl-mirror
+think through niri workflow
+mako?
+portals
+flameshot
+authentication agent?
+background (swaybg)
+theming

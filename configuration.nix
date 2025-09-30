@@ -32,7 +32,7 @@
         noDesktop = true;
         enableXfwm = false;
         enableWaylandSession = true;
-        waylandSessionCompositor = "niri";
+        waylandSessionCompositor = "niri-session";
       };
     };
     windowManager.i3 = {
@@ -43,10 +43,20 @@
       ];
     };
     # Configure keymap in X11
-    xkb = {
-      layout = "us";
-    };
+    # xkb = {
+    #   layout = "us";
+    # };
+    videoDrivers = [ "modesetting" ];
   };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # Hardware Acceleration
+      vpl-gpu-rt # QSV
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
   services.blueman.enable = true;
 

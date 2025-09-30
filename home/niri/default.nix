@@ -17,7 +17,10 @@
 
         input = {
           keyboard = {
-            # xkb.layout = "us";
+            xkb = {
+              layout = "us";
+              options = "compose:ralt";
+            };
             numlock = true;
           };
 
@@ -29,6 +32,8 @@
             enable = true;
             max-scroll-amount = "95%";
           };
+
+          workspace-auto-back-and-forth = true;
         };
 
         layout = {
@@ -68,10 +73,10 @@
           "Mod+Home".action = focus-column-first;
           "Mod+End".action = focus-column-last;
 
-          "Mod+Shift+Left".action = move-column-left;
-          "Mod+Shift+H".action = move-column-left;
-          "Mod+Shift+Right".action = move-column-right;
-          "Mod+Shift+L".action = move-column-right;
+          "Mod+Shift+Left".action = move-column-left-or-to-monitor-left;
+          "Mod+Shift+H".action = move-column-left-or-to-monitor-left;
+          "Mod+Shift+Right".action = move-column-right-or-to-monitor-right;
+          "Mod+Shift+L".action = move-column-right-or-to-monitor-right;
           "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
           "Mod+Shift+K".action = move-window-up-or-to-workspace-up;
           "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
