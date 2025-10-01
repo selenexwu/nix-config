@@ -1,4 +1,3 @@
-waybar
 layout improvements
 wl-mirror
 think through niri workflow
@@ -8,3 +7,5 @@ flameshot
 authentication agent?
 background (swaybg)
 theming
+waybar spotify
+waybar styling
