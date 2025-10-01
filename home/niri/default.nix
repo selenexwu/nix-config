@@ -15,6 +15,12 @@
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
 
+        outputs = {
+          "eDP-1" = {
+            scale = 1.0;
+          };
+        };
+
         input = {
           keyboard = {
             xkb = {
