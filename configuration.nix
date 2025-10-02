@@ -151,7 +151,7 @@
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "SebLaptop"; # Define your hostname.
+  networking.hostName = "SeleneLaptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.nameservers = [ "9.9.9.9" "8.8.8.8" "1.1.1.1" ];
 
@@ -206,7 +206,7 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.seb = {
+  users.users.selene = {
     isNormalUser = true;
     description = "Selene";
     extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
@@ -225,7 +225,7 @@
   };
 
    virtualisation.virtualbox.host.enable = true;
-   users.extraGroups.vboxusers.members = [ "seb" ];
+   users.extraGroups.vboxusers.members = [ "selene" ];
 
    virtualisation.docker = {
      # Consider disabling the system wide Docker daemon

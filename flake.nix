@@ -59,7 +59,7 @@
       # Run the following command in the flake's directory to
       # deploy this configuration on any NixOS system:
       #   sudo nixos-rebuild switch --flake .#nixos-test
-      "SebLaptop" = nixpkgs.lib.nixosSystem {
+      "SeleneLaptop" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         # The Nix module system can modularize configuration,
@@ -107,7 +107,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users."seb" = import ./home; 
+              users."selene" = import ./home;
               extraSpecialArgs = { inherit inputs; };
             };
           }
@@ -119,7 +119,7 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "seb@SebLaptop" = home-manager.lib.homeManagerConfiguration {
+      "selene@SeleneLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./home ];

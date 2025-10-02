@@ -43,8 +43,8 @@
   */
 
   home = {
-    username = "seb";
-    homeDirectory = "/home/seb";
+    username = "selene";
+    homeDirectory = "/home/selene";
     sessionVariables = {
       TERMINAL = "kitty";
     };
@@ -91,14 +91,14 @@
     praat
     file
     smlnj
-    inputs.nix-xilinx.packages.x86_64-linux.vivado
+    # inputs.nix-xilinx.packages.x86_64-linux.vivado
     zoom-us
     htop
     hyfetch
   ];
 
   # Rocq path for stdlib
-  home.sessionVariables.ROCQPATH = "/etc/profiles/per-user/seb/lib/coq/9.0/user-contrib/";
+  home.sessionVariables.ROCQPATH = "/etc/profiles/per-user/selene/lib/coq/9.0/user-contrib/";
 
   programs.kitty = {
     enable = true;
@@ -127,7 +127,7 @@
   # basic configuration of git
   programs.git = {
     enable = true;
-    userName = "Seb";
+    userName = "Selene";
     userEmail = "sebastianxwu@gmail.com";
   };
 
