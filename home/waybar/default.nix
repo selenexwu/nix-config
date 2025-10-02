@@ -13,11 +13,6 @@
 
   programs.waybar = {
     enable = true;
-    systemd = {
-      enable = true;
-      target = "niri.target";
-      # enableInspect = true;
-    };
     style = ./style.css;
     settings = {
       mainBar = {

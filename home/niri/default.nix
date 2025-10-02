@@ -8,12 +8,47 @@
     fuzzel
   ];
 
+  systemd.user.services = {
+    swaybg = {
+      Install = {
+        WantedBy = ["niri.target"];
+      };
+      Unit = {
+        PartOf = "graphical-session.target";
+        After = "graphical-session.target";
+        Requisite = "graphical-session.target";
+      };
+      Service = {
+        ExecStart = "${pkgs.swaybg}/bin/swaybg -m fill -i ${./wallpaper.png}";
+        Restart = "on-failure";
+      };
+    };
+  };
+
   programs = {
     niri = {
       enable = true;
       settings = {
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
+
+        debug = {
+          honor-xdg-activation-with-invalid-serial = [];
+        };
+
+        spawn-at-startup =
+          let
+            sh = [
+              "sh"
+              "-c"
+            ];
+          in
+            [
+              { command = sh ++ [ "systemctl --user start waybar.service" ]; }
+              { command = sh ++ [ "systemctl --user start swaybg.service" ]; }
+              # { command = sh ++ [ "sleep 1 && blueman-applet" ]; }
+              # { command = [ "nm-applet" ]; }
+            ];
 
         outputs = {
           "eDP-1" = {
@@ -43,7 +78,56 @@
         };
 
         layout = {
-          gaps = 8;
+          gaps = 16;
+
+          background-color = "transparent";
+
+          preset-column-widths = [
+            { proportion = 1.0 / 3.0; }
+            { proportion = 0.5; }
+            { proportion = 2.0 / 3.0; }
+          ];
+
+          preset-window-heights = [
+            { proportion = 1.0 / 3.0; }
+            { proportion = 0.5; }
+            { proportion = 2.0 / 3.0; }
+            { proportion = 1.0; }
+          ];
+
+          border.enable = false;
+
+          focus-ring = {
+            enable = true;
+            width = 4;
+            active = {
+              color = "#bd93f9";
+            };
+            inactive = {
+              color = "#6272a4";
+            };
+          };
+
+          shadow = {
+            enable = true;
+          };
+
+          tab-indicator = {
+            enable = true;
+            place-within-column = true;
+            width = 8;
+            corner-radius = 8;
+            gap = 8;
+            gaps-between-tabs = 8;
+            position = "left";
+            active = {
+              color = "#bd93f9";
+            };
+            inactive = {
+              color = "#6272a4";
+            };
+            length.total-proportion = 1.0;
+          };
         };
 
         window-rules = [
@@ -60,6 +144,17 @@
             draw-border-with-background = false;
           }
         ];
+
+        layer-rules = [
+          # {
+          #   matches = [ { namespace = "^wallpaper$"; } ];
+          #   place-within-backdrop = true;
+          # }
+        ];
+
+        overview = {
+          backdrop-color = "#b2e4ff";
+        };
 
         binds = with config.lib.niri.actions; {
           "Mod+Shift+Slash".action = show-hotkey-overlay;
