@@ -1,11 +1,13 @@
-layout improvements
-wl-mirror
+Selene
+hyprlock
+wl-mirror + kanshi
 think through niri workflow
 mako?
 portals
 flameshot
 authentication agent?
-background (swaybg)
-theming
+theming (fuzzel, waybar, niri)
 waybar spotify
 waybar styling
+layout improvements
+switch off xfce (need autostart nm-applet + bluetooth, display settings, notifications)

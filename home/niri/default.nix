@@ -5,7 +5,7 @@
 
   home.packages = with pkgs; [
     xwayland-satellite
-    fuzzel
+    bibata-cursors
   ];
 
   systemd.user.services = {
@@ -26,6 +26,15 @@
   };
 
   programs = {
+    fuzzel = {
+      enable = true;
+      settings = {
+        main = {
+          font = "Fantasque Sans Mono:size=11";
+        };
+      };
+    };
+
     niri = {
       enable = true;
       settings = {
@@ -34,6 +43,11 @@
 
         debug = {
           honor-xdg-activation-with-invalid-serial = [];
+        };
+
+        cursor = {
+          theme = "Bibata-Original-Classic";
+          size = 24;
         };
 
         spawn-at-startup =
