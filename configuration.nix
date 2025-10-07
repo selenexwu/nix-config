@@ -43,11 +43,13 @@
       ];
     };
     # Configure keymap in X11
-    # xkb = {
-    #   layout = "us";
-    # };
+    xkb = {
+      layout = "us";
+    };
     videoDrivers = [ "modesetting" ];
   };
+
+  console.keyMap = "us";
 
   hardware.graphics = {
     enable = true;
