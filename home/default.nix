@@ -11,7 +11,7 @@
     # ./polybar
     ./zsh
     ./nvim
-    ./picom
+    # ./picom
     ./ilia
     ./emacs
     ./niri
