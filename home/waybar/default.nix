@@ -22,7 +22,29 @@
         spacing = 4;
         modules-left = ["niri/workspaces"];
         modules-center = [];
-        modules-right = ["backlight" "battery" "pulseaudio" "clock" "tray"];
+        modules-right = ["custom/xfce-notif" "backlight" "battery" "pulseaudio" "clock" "tray"];
+        "custom/xfce-notif" = {
+          exec = pkgs.writeShellScript "waybar-xfce-notif" ''
+            DND=$(${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb)
+            if [ "$DND" = "false" ]; then
+               echo '{"alt": "on"}'
+            else
+               echo '{"alt": "off"}'
+            fi
+          '';
+          on-click = pkgs.writeShellScript "waybar-xfce-notif-click" ''
+            ${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb -T
+          '';
+          interval = "once";
+          format = "{icon}";
+          return-type = "json";
+          format-icons = {
+            on = "";
+            off = "";
+          };
+          tooltip = false;
+          exec-on-event = true;
+        };
         "backlight" = {
           format = "{icon} {percent}%";
           format-icons = ["" "" "" "" "" "" "" "" ""];

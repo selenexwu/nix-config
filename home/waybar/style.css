@@ -93,7 +93,8 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#mpd {
+#mpd,
+#custom-xfce-notif {
     padding: 0 10px;
     color: #ffffff;
 }
