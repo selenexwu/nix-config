@@ -1,13 +1,10 @@
-Selene
 hyprlock
-wl-mirror + kanshi
-think through niri workflow
-mako?
-portals
 flameshot
+think through niri workflow
+portals
 authentication agent?
-theming (fuzzel, waybar, niri)
+theming (fuzzel, waybar, niri, wlr-which-key)
 waybar spotify
 waybar styling
 layout improvements
-switch off xfce (need autostart nm-applet + bluetooth, display settings, notifications)
+switch off xfce (need autostart nm-applet + bluetooth, display settings, notifications (mako))
