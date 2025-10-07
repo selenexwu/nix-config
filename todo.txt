@@ -1,10 +1,8 @@
-hyprlock
 flameshot
 think through niri workflow
 portals
 authentication agent?
-theming (fuzzel, waybar, niri, wlr-which-key)
+theming (fuzzel, waybar, niri, wlr-which-key, hyprlock)
 waybar spotify
-waybar styling
 layout improvements
 switch off xfce (need autostart nm-applet + bluetooth, display settings, notifications (mako))
