@@ -267,6 +267,10 @@
           #   matches = [ { namespace = "^wallpaper$"; } ];
           #   place-within-backdrop = true;
           # }
+          # {
+          #   matches = [ { namespace = "^notifications?$"; } ];
+          #   block-out-from = "screen-capture";
+          # }
         ];
 
         overview = {
