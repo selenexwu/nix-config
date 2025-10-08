@@ -1,5 +1,3 @@
-flameshot
-think through niri workflow
 theming (fuzzel, waybar, niri, wlr-which-key, hyprlock)
 waybar spotify
 layout improvements

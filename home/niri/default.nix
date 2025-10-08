@@ -12,6 +12,10 @@
     wl-mirror
     wlr-which-key
     jq
+    grim
+    slurp
+    satty
+    wl-clipboard-rs
   ];
 
   systemd.user.services = {
@@ -373,10 +377,9 @@
 
               "Mod+W".action = toggle-column-tabbed-display;
 
-              # TODO: replace with flameshot
-              "Print".action = screenshot;
+              "Print".action = spawn-sh "set -e; grim -t ppm -o \"$(niri msg -j focused-output | jq -r '.name')\" - | satty -f - --init-tool=crop --copy-command=wl-copy --output-filename=\"$(xdg-user-dir PICTURES)/Screenshots/Screenshot-%Y-%m-%d-%H:%M:%S.png\" --actions-on-enter=\"save-to-clipboard,exit\" --brush-smooth-history-size=5 --disable-notifications --fullscreen --early-exit";
               # "Ctrl+Print".action = screenshot-screen;
-              "Alt+Print".action = screenshot-window;
+              # "Alt+Print".action = screenshot-window;
 
               "Mod+Escape" = { action = toggle-keyboard-shortcuts-inhibit; allow-inhibiting = false; };
 
