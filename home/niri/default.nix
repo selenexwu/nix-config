@@ -5,6 +5,9 @@
 
   home.packages = with pkgs; [
     xwayland-satellite
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+    gnome-keyring
     bibata-cursors
     wl-mirror
     wlr-which-key

@@ -1,7 +1,5 @@
 flameshot
 think through niri workflow
-portals
-authentication agent?
 theming (fuzzel, waybar, niri, wlr-which-key, hyprlock)
 waybar spotify
 layout improvements
