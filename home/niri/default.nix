@@ -163,6 +163,7 @@
             [
               { command = sh ++ [ "systemctl --user start waybar.service" ]; }
               { command = sh ++ [ "systemctl --user start swaybg.service" ]; }
+              { command = sh ++ [ "systemctl --user start hypridle.service" ]; }
               # { command = sh ++ [ "sleep 1 && blueman-applet" ]; }
               # { command = [ "nm-applet" ]; }
             ];
