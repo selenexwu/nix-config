@@ -75,7 +75,6 @@
     discord
     spotify
     baobab
-    texmaker
     tex
     slack
     godot_4
