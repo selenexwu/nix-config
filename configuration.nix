@@ -56,6 +56,8 @@
     extraPackages = with pkgs; [
       intel-media-driver # Hardware Acceleration
       vpl-gpu-rt # QSV
+      intel-ocl
+      intel-compute-runtime-legacy1
     ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
