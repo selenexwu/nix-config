@@ -66,7 +66,8 @@
       tikz-qtree
       semantic
       phonrule
-      ntheorem;
+      ntheorem
+      braket;
     });
   in
   with pkgs; [
