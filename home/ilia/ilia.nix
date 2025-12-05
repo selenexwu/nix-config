@@ -4,7 +4,7 @@
 , ninja
 , vala
 , pkg-config
-, wrapGAppsHook
+, wrapGAppsHook3
 , gobject-introspection
 , glib
 , json-glib
@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
     patchShebangs "meson_scripts"
   '';
 
-  nativeBuildInputs = [ meson ninja vala pkg-config wrapGAppsHook ];
+  nativeBuildInputs = [ meson ninja vala pkg-config wrapGAppsHook3 ];
 
   buildInputs = [ gobject-introspection glib json-glib tinysparql atk cairo gtk3 libgee gtk-layer-shell ];
 }

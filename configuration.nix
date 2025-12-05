@@ -13,6 +13,8 @@
   environment.pathsToLink = [ 
     "/libexec" # necessary for i3 
     "/share/zsh" # for zsh completion
+    "/share/applications" # xdg portal + home manager needs this apparently
+    "/share/xdg-desktop-portal" # xdg portal + home manager needs this apparently
   ];
 
   services.displayManager.defaultSession = "xfce-wayland";
