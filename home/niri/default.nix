@@ -185,6 +185,7 @@
 
           touchpad = {
             natural-scroll = false;
+            dwt = true;
           };
 
           focus-follows-mouse = {
