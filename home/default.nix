@@ -95,6 +95,7 @@
     zoom-us
     htop
     hyfetch
+    typst
   ];
 
   # Rocq path for stdlib

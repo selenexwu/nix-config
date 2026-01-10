@@ -108,3 +108,24 @@
 (setq +latex-viewers '(pdf-tools))
 ;; (add-hook! 'LaTeX-mode-hook
 ;;   (setq TeX-command-default "LaTeXMk"))
+
+(use-package! typst-ts-mode
+  :custom
+  (typst-ts-watch-options '("--open" "zathura"))
+  (typst-ts-enable-raw-blocks-highlight t)
+  :config
+  (keymap-set typst-ts-mode-map "C-c C-p" #'typst-preview-start)
+  )
+(after! lsp-mode
+  (add-to-list 'lsp-language-id-configuration '(typst-ts-mode . "typst"))
+  (lsp-register-client (make-lsp-client
+                        :new-connection (lsp-stdio-connection "tinymist")
+                        :activation-fn (lsp-activate-on "typst")
+                        :server-id 'tinymist))
+  (add-hook 'typst-ts-mode-hook 'lsp))
+(use-package! tip
+  :defer t
+  :custom
+  (tip-server-basedir (expand-file-name "~/Documents/tip-server-py"))
+  ;; (tip-enable-debug t)
+  )
