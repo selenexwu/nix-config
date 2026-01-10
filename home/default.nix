@@ -113,6 +113,11 @@
   #   };
   # };
 
+  services.ssh-agent = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   gtk = {
     enable = true;
     theme = {
