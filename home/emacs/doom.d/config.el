@@ -108,3 +108,5 @@
 (setq +latex-viewers '(pdf-tools))
 ;; (add-hook! 'LaTeX-mode-hook
 ;;   (setq TeX-command-default "LaTeXMk"))
+
+(setq +format-on-save-disabled-modes (append +format-on-save-disabled-modes '(tuareg-mode)))
