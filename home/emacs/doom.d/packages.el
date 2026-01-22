@@ -58,3 +58,10 @@
            :files ("*.el" "data")))
 
 (package! opam-switch-mode :disable t)
+
+(package! typst-ts-mode :recipe (:host codeberg :repo "meow_king/typst-ts-mode"))
+(package! typst-preview
+  :recipe (:host github :repo "havarddj/typst-preview.el"))
+(package! tip :recipe (:host sourcehut :repo "mafty/tip"))
+
+(package! uiua-ts-mode :recipe (:host github :repo "crmsnbleyd/uiua-ts-mode"))

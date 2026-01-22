@@ -50,5 +50,7 @@
     ghostscript
     gopls
     basedpyright
+    tree-sitter-grammars.tree-sitter-typst
+    tinymist
   ];
 }

@@ -66,7 +66,8 @@
       tikz-qtree
       semantic
       phonrule
-      ntheorem;
+      ntheorem
+      braket;
     });
   in
   with pkgs; [
@@ -94,6 +95,7 @@
     zoom-us
     htop
     hyfetch
+    typst
   ];
 
   # Rocq path for stdlib
@@ -110,6 +112,11 @@
   #     General.showHelp = false;
   #   };
   # };
+
+  services.ssh-agent = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   gtk = {
     enable = true;

@@ -13,6 +13,8 @@
   environment.pathsToLink = [ 
     "/libexec" # necessary for i3 
     "/share/zsh" # for zsh completion
+    "/share/applications" # xdg portal + home manager needs this apparently
+    "/share/xdg-desktop-portal" # xdg portal + home manager needs this apparently
   ];
 
   services.displayManager.defaultSession = "xfce-wayland";
@@ -56,6 +58,8 @@
     extraPackages = with pkgs; [
       intel-media-driver # Hardware Acceleration
       vpl-gpu-rt # QSV
+      intel-ocl
+      intel-compute-runtime-legacy1
     ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
@@ -157,6 +161,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.nameservers = [ "9.9.9.9" "8.8.8.8" "1.1.1.1" ];
 
+  programs.wireshark = {
+    enable = true;
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -211,7 +219,7 @@
   users.users.selene = {
     isNormalUser = true;
     description = "Selene";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" "wireshark" ];
   };
 
   # Allow unfree packages
