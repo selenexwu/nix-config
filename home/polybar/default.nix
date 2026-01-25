@@ -251,8 +251,8 @@
               underline = colors.yellow;
             };
             hook = [
-              "echo \"%{A1:${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb -s true && ${package}/bin/polybar-msg hook xfce-notify 2:} %{A}\" &"
-              "echo \"%{A1:${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb -s false && ${package}/bin/polybar-msg hook xfce-notify 1:} %{A}\" &"
+              "echo \"%{A1:${pkgs.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb -s true && ${package}/bin/polybar-msg hook xfce-notify 2:} %{A}\" &"
+              "echo \"%{A1:${pkgs.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb -s false && ${package}/bin/polybar-msg hook xfce-notify 1:} %{A}\" &"
             ];
           };
         };
