@@ -109,6 +109,7 @@
 ;; (add-hook! 'LaTeX-mode-hook
 ;;   (setq TeX-command-default "LaTeXMk"))
 
+(setq +format-on-save-disabled-modes (append +format-on-save-disabled-modes '(tuareg-mode)))
 (use-package! typst-ts-mode
   :custom
   (typst-ts-watch-options '("--open" "zathura"))
