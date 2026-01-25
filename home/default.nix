@@ -133,8 +133,13 @@
   # basic configuration of git
   programs.git = {
     enable = true;
-    userName = "Selene";
-    userEmail = "sebastianxwu@gmail.com";
+    settings = {
+      user = {
+        name  = "Selene";
+        email = "sebastianxwu@gmail.com";
+      };
+      init.defaultBranch = "main";
+    };
   };
 
   services.blueman-applet.enable = true;
