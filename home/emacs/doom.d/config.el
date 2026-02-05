@@ -139,3 +139,6 @@
                         :activation-fn (lsp-activate-on "uiua")
                         :server-id 'uiua))
   (add-hook 'uiua-ts-mode-hook 'lsp))
+
+;; For CS391J1
+(setq tramp-kubernetes-namespace "bu-cs391-pmpp-437ae4")
