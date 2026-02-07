@@ -74,7 +74,7 @@
     wget
     xorg.xev
     pavucontrol
-    xfce.xfce4-volumed-pulse
+    xfce4-volumed-pulse
     zathura
     qpdf
     zip

@@ -25,7 +25,7 @@
         modules-right = ["custom/xfce-notif" "backlight" "battery" "pulseaudio" "clock" "tray"];
         "custom/xfce-notif" = {
           exec = pkgs.writeShellScript "waybar-xfce-notif" ''
-            DND=$(${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb)
+            DND=$(${pkgs.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb)
             if [ "$DND" = "false" ]; then
                echo '{"alt": "on"}'
             else
@@ -33,7 +33,7 @@
             fi
           '';
           on-click = pkgs.writeShellScript "waybar-xfce-notif-click" ''
-            ${pkgs.xfce.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb -T
+            ${pkgs.xfconf}/bin/xfconf-query -c xfce4-notifyd -p /do-not-disturb -T
           '';
           interval = "once";
           format = "{icon}";
