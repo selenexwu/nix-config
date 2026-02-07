@@ -139,3 +139,8 @@
                         :activation-fn (lsp-activate-on "uiua")
                         :server-id 'uiua))
   (add-hook 'uiua-ts-mode-hook 'lsp))
+
+(use-package! jdecomp
+  :mode ("\\.class\\'" . jdecomp-mode)
+  :custom
+  (jdecomp-decompiler-paths '((cfr . "/opt/cfr/cfr-0.152.jar")) ))
