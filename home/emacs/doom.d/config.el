@@ -140,5 +140,10 @@
                         :server-id 'uiua))
   (add-hook 'uiua-ts-mode-hook 'lsp))
 
+(use-package! jdecomp
+  :mode ("\\.class\\'" . jdecomp-mode)
+  :custom
+  (jdecomp-decompiler-paths '((cfr . "/opt/cfr/cfr-0.152.jar")) ))
+
 ;; For CS391J1
 (setq tramp-kubernetes-namespace "bu-cs391-pmpp-437ae4")

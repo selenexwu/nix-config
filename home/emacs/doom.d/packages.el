@@ -65,3 +65,5 @@
 (package! tip :recipe (:host sourcehut :repo "mafty/tip"))
 
 (package! uiua-ts-mode :recipe (:host github :repo "crmsnbleyd/uiua-ts-mode"))
+
+(package! jdecomp)
