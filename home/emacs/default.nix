@@ -54,5 +54,6 @@
     tinymist
     clang-tools # for clangd (c/c++ lsp)
     kubectl # for connecting to kubernetes via TRAMP
+    jdt-language-server
   ];
 }
