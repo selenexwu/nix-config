@@ -72,7 +72,7 @@
     git
     vim 
     wget
-    xorg.xev
+    xev
     pavucontrol
     xfce4-volumed-pulse
     zathura
