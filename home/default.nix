@@ -51,32 +51,13 @@
   };
 
   # Add stuff for your user as you see fit:
-  home.packages = let
-    tex = (pkgs.texlive.combine {
-      inherit (pkgs.texlive) 
-      scheme-medium
-      algorithm2e
-      exam
-      preprint
-      xcolor
-      ifoddpage
-      relsize
-      enumitem
-      gb4e
-      tikz-qtree
-      semantic
-      phonrule
-      ntheorem
-      braket;
-    });
-  in
-  with pkgs; [
+  home.packages = with pkgs; [
     firefox
     tldr
     discord
     spotify
     baobab
-    tex
+    texlive.combined.scheme-full
     slack
     godot_4
     elan
