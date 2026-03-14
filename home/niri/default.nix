@@ -55,6 +55,11 @@
         main = {
           font = "Fantasque Sans Mono:size=11";
         };
+        key-bindings = {
+          delete-line-forward = "none"; # unbind control+k so we can use it for previous
+          next = "Down Control+n Control+j";
+          prev = "Up Control+p Control+k";
+        };
       };
     };
 
