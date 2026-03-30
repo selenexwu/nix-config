@@ -48,4 +48,11 @@
     name = "MesloLGS NF";
     size = 12;
   };
+
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    options = ["--cmd=cd"];
+  };
 }
