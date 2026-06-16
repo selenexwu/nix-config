@@ -147,3 +147,6 @@
 
 ;; For CS391J1
 (setq tramp-kubernetes-namespace "bu-cs391-pmpp-437ae4")
+
+(use-package! sweeprolog
+  :mode ("\\.pl\\'" . sweeprolog-mode))
