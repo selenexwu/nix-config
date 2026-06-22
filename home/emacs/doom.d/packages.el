@@ -67,3 +67,5 @@
 (package! uiua-ts-mode :recipe (:host github :repo "crmsnbleyd/uiua-ts-mode"))
 
 (package! jdecomp)
+
+(package! sweeprolog :recipe (:files (:defaults "*.pl")))
