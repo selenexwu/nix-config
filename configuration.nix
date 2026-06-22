@@ -172,8 +172,15 @@
   # Enable networking
   networking.networkmanager = {
     enable = true;
-    wifi.backend = "iwd";
+    # wifi.backend = "iwd";
+    wifi.backend = "wpa_supplicant";
   };
+
+  # wifi card settings to hopefully make it work better
+  boot.extraModprobeConfig = ''
+    options iwlwifi 11n_disable=8 led_mode=1 power_save=0 bt_coex_active=N
+    options iwlmvm power_scheme=1
+  '';
 
   # Set your time zone.
   # time.timeZone = lib.mkDefault "America/New_York";
