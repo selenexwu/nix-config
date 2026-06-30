@@ -23,8 +23,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     doomemacs = {
-      url = "github:doomemacs/doomemacs/master";
+      url = "https://github.com/doomemacs/core.git";
       flake = false;
+      type = "git";
+      submodules = true;
     };
     nix-xilinx = {
       url = "gitlab:doronbehar/nix-xilinx";

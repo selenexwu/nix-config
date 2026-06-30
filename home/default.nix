@@ -80,6 +80,7 @@
     htop
     hyfetch
     typst
+    protontricks
   ];
 
   # Rocq path for stdlib
@@ -97,10 +98,7 @@
   #   };
   # };
 
-  services.ssh-agent = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  services.ssh-agent.enable = true;
 
   gtk = {
     enable = true;
@@ -108,6 +106,7 @@
       package = pkgs.dracula-theme;
       name = "Dracula";
     };
+    gtk4.theme = config.gtk.theme;
     iconTheme = {
       package = pkgs.dracula-icon-theme;
       name = "Dracula";

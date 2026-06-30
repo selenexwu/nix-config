@@ -6,6 +6,8 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    withRuby = false;
+    withPython3 = false;
     extraPackages = [ pkgs.xclip pkgs.gnumake pkgs.gcc pkgs.cargo ];
   };
 
