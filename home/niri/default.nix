@@ -7,6 +7,7 @@
     xwayland-satellite
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
+    nautilus
     gnome-keyring
     bibata-cursors
     wl-mirror
@@ -17,6 +18,29 @@
     satty
     wl-clipboard-rs
   ];
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common = {
+        default = [
+          "gtk"
+          "gnome"
+        ];
+      };
+      niri = {
+        default = [
+          "gtk"
+          "gnome"
+        ];
+      };
+    };
+    # extraPortals = [
+    #     pkgs.xdg-desktop-portal-wlr
+    #     pkgs.xdg-desktop-portal-gtk
+    # ];
+  };
 
   systemd.user.services = {
     swaybg = {
