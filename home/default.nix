@@ -81,6 +81,8 @@
     hyfetch
     typst
     protontricks
+    btop
+    bat
   ];
 
   # Rocq path for stdlib
